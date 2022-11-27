@@ -1,67 +1,63 @@
 import React from 'react';
-import { StyleSheet, Button, View, SafeAreaView, Text, Alert } from 'react-native';
+import { StyleSheet, Button, View, SafeAreaView, Text, Alert, Image, span } from 'react-native';
 
-const Separator = () => (
-  <View style={styles.separator} />
-);
 
 const App = () => (
   <SafeAreaView style={styles.container}>
     <View>
-      <Text style={styles.title}>
-       Welcome To Clues To The Loo
+      <Text style={styles.title}> 
+       Welcome to 'Clues To The Loo'
       </Text>
+      </View>
+      <View style={styles.image}>
+        <Image source={require('./toilet.png')}/>
+      </View>
+      <View style={styles.Button}>
       <Button
-        title="Press me"
-        onPress={() => Alert.alert('Simple Button pressed')}
-      />
-    </View>
-    <Separator />
-    <View>
-      <Text style={styles.title}>
-        Adjust the color in a way that looks standard on each platform. On  iOS, the color prop controls the color of the text. On Android, the color adjusts the background color of the button.
-      </Text>
-      <Button
-        title="Press me"
-        color="#f194ff"
-        onPress={() => Alert.alert('Button with adjusted color pressed')}
+        title= "Find the nearest bathroom"
+        color= 'black'
+        
+        //onPress={() => Alert.alert('Simple Button pressed')}
       />
     </View>
 
-    <View>
-      <Text style={styles.title}>
-        All interaction for the component are disabled.
-      </Text>
-      <Button
-        title="Press me"
-        disabled
-        onPress={() => Alert.alert('Cannot press this one')}
-      />
-    </View>
   </SafeAreaView>
 );
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    marginHorizontal: 16,
+    justifyContent: 'space-evenly',
+    backgroundColor: 'white',
   },
+
+  Button: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+     marginHorizontal: 16,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: 'black',
+  },
+
+  image: {
+    resizeMode: 'contain',
+    alignSelf: 'center',
+  },
+
   title: {
     textAlign: 'center',
-    marginVertical: 20,
-    fontSize: 19,
+    marginVertical: 30,
+    fontSize: 29,
     borderRadius: 15,
-    borderColor: 'blue',
+    color: 'black',
+    fontWeight: 'bold',
   },
   fixToText: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-  },
-  separator: {
-    marginVertical: 8,
-    borderBottomColor: '#737373',
-    borderBottomWidth: StyleSheet.hairlineWidth,
   },
 });
 
